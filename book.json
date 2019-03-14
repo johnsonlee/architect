@@ -1,0 +1,34 @@
+{
+    "gitbook": ">=3.1.0",
+    "title": "The Architect",
+    "description": "The Cookbook of Architect",
+    "output": "docs",
+    "generator": "site",
+    "structure": {
+        "readme": "README.md"
+    },
+    "plugins": [
+        "mathjax",
+        "splitter",
+        "codeblock-filename",
+        "theme-comscore"
+    ],
+    "pluginsConfig": {
+        "fontsettings": {
+            "theme": "sepia",
+            "family": "serif",
+            "size": 1
+        },
+        "theme-default": {
+            "showLevel": true
+        }
+    },
+    "links": {
+        "sharing": {
+            "google": false,
+            "facebook": false,
+            "twitter": false,
+            "all": false
+        }
+    }
+}

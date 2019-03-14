@@ -1,0 +1,33 @@
+{
+  "name": "architect",
+  "version": "0.0.1",
+  "description": "The Architect",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "./node_modules/.bin/gitbook serve . docs",
+    "serve": "yarn start",
+    "build": "./node_modules/.bin/gitbook build . docs",
+    "deploy": "yarn build && git add . && git commit -m \"publish\" && git push origin master:master"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnsonlee/architect.git"
+  },
+  "author": "Johnson Lee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnsonlee/architect/issues"
+  },
+  "homepage": "https://github.com/johnsonlee/architect",
+  "dependencies": {
+    "gitbook-cli": "^2.3.2",
+    "gitbook-plugin-codeblock-filename": "0.0.9",
+    "gitbook-plugin-mathjax": "^1.1.2",
+    "gitbook-plugin-splitter": "0.0.8",
+    "gitbook-plugin-theme-comscore": "0.0.3",
+    "gitbook-theme-comscore": "0.0.3"
+  }
+}

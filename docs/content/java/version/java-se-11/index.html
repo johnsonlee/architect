@@ -1,0 +1,3816 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Java SE 11 · The Architect</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-codeblock-filename/block.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="./" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1" data-path="../../../../">
+            
+                <a href="../../../../">
+            
+                    
+                        <b>1.</b>
+                    
+                    序言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Java</li>
+        
+        
+    
+        <li class="chapter " data-level="1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.</b>
+                    
+                    版本历史
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Java SE 11
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="./">
+            
+                <a href="./#local-variable-syntax-for-lambda-parameters">
+            
+                    
+                        <b>1.1.1.</b>
+                    
+                    Local-Variable Syntax for Lambda Parameters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="./">
+            
+                <a href="./#launch-single-file-source-code-programs">
+            
+                    
+                        <b>1.1.2.</b>
+                    
+                    Launch Single-File Source-Code Programs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="./">
+            
+                <a href="./#unicode-10">
+            
+                    
+                        <b>1.1.3.</b>
+                    
+                    Unicode 10
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="./">
+            
+                <a href="./#http-client-standard">
+            
+                    
+                        <b>1.1.4.</b>
+                    
+                    HTTP Client (Standard)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="./">
+            
+                <a href="./#lazy-allocation-of-compiler-threads">
+            
+                    
+                        <b>1.1.5.</b>
+                    
+                    Lazy Allocation of Compiler Threads
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6" data-path="./">
+            
+                <a href="./#zgc---a-scalable-low-latency-garbage-collector">
+            
+                    
+                        <b>1.1.6.</b>
+                    
+                    ZGC - A Scalable Low-Latency Garbage Collector
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="./">
+            
+                <a href="./#epsilon---a-no-op-garbage-collector">
+            
+                    
+                        <b>1.1.7.</b>
+                    
+                    Epsilon - A No-Op Garbage Collector
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.8" data-path="./">
+            
+                <a href="./#low-overhead-heap-profiling">
+            
+                    
+                        <b>1.1.8.</b>
+                    
+                    Low-Overhead Heap Profiling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.9" data-path="./">
+            
+                <a href="./#nest-based-access-control">
+            
+                    
+                        <b>1.1.9.</b>
+                    
+                    Nest-Based Access Control
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.10" data-path="./">
+            
+                <a href="./#key-agreement-with-curve25519-and-curve448">
+            
+                    
+                        <b>1.1.10.</b>
+                    
+                    Key Agreement with Curve25519 and Curve448
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.11" data-path="./">
+            
+                <a href="./#chacha20-and-poly1305-cryptographic-algorithms">
+            
+                    
+                        <b>1.1.11.</b>
+                    
+                    ChaCha20 and Poly1305 Cryptographic Algorithms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.12" data-path="./">
+            
+                <a href="./#transport-layer-security-tls-13">
+            
+                    
+                        <b>1.1.12.</b>
+                    
+                    Transport Layer Security (TLS) 1.3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.13" data-path="./">
+            
+                <a href="./#removal-of-threaddestroy-and-threadstopthrowable">
+            
+                    
+                        <b>1.1.13.</b>
+                    
+                    Removal of Thread.destroy() and Thread.stop(Throwable)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.14" data-path="./">
+            
+                <a href="./#removal-of-jmc-from-the-oracle-jdk">
+            
+                    
+                        <b>1.1.14.</b>
+                    
+                    Removal of JMC from the Oracle JDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.15" data-path="./">
+            
+                <a href="./#removal-of-javafx-from-the-oracle-jdk">
+            
+                    
+                        <b>1.1.15.</b>
+                    
+                    Removal of JavaFX from the Oracle JDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.16" data-path="./">
+            
+                <a href="./#removal-of-java-ee-and-corba-modules">
+            
+                    
+                        <b>1.1.16.</b>
+                    
+                    Removal of Java EE and CORBA Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.17" data-path="./">
+            
+                <a href="./#deprecation-of-nashorn-javascript-engine">
+            
+                    
+                        <b>1.1.17.</b>
+                    
+                    Deprecation of Nashorn JavaScript Engine
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.18" data-path="./">
+            
+                <a href="./#deprecation-of-pack200-tools-and-api">
+            
+                    
+                        <b>1.1.18.</b>
+                    
+                    Deprecation of Pack200 Tools and API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.19" data-path="./">
+            
+                <a href="./#readonly-system-properties">
+            
+                    
+                        <b>1.1.19.</b>
+                    
+                    Readonly System Properties
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.20" data-path="./">
+            
+                <a href="./#javalangrefreference-does-not-support-cloning">
+            
+                    
+                        <b>1.1.20.</b>
+                    
+                    java.lang.ref.Reference Does Not Support Cloning
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../java-se-10/">
+            
+                <a href="../java-se-10/">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    Java SE 10
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../java-se-9/">
+            
+                <a href="../java-se-9/">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    Java SE 9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../java-se-8/">
+            
+                <a href="../java-se-8/">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    Java SE 8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../java-se-7/">
+            
+                <a href="../java-se-7/">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    Java SE 7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../java-se-6/">
+            
+                <a href="../java-se-6/">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    Java SE 6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../j2se-5.0/">
+            
+                <a href="../j2se-5.0/">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    J2SE 5.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../j2se-1.4/">
+            
+                <a href="../j2se-1.4/">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    J2SE 1.4
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="../../jvm/">
+            
+                <a href="../../jvm/">
+            
+                    
+                        <b>2.</b>
+                    
+                    Java 虚拟机
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="../../jvm/the-class-file-format/">
+            
+                <a href="../../jvm/the-class-file-format/">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    class 文件格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../jvm/data-types/">
+            
+                <a href="../../jvm/data-types/">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../jvm/primitive-types-and-values/">
+            
+                <a href="../../jvm/primitive-types-and-values/">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    原始类型和值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../../jvm/reference-types-and-values/">
+            
+                <a href="../../jvm/reference-types-and-values/">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    引用类型和值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../../jvm/run-time-data-areas/">
+            
+                <a href="../../jvm/run-time-data-areas/">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    运行时数据区
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../../jvm/run-time-data-areas/the-pc-register/">
+            
+                <a href="../../jvm/run-time-data-areas/the-pc-register/">
+            
+                    
+                        <b>2.5.1.</b>
+                    
+                    寄存器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../../jvm/run-time-data-areas/java-virtual-machine-stacks/">
+            
+                <a href="../../jvm/run-time-data-areas/java-virtual-machine-stacks/">
+            
+                    
+                        <b>2.5.2.</b>
+                    
+                    虚拟机栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../../jvm/run-time-data-areas/heap/">
+            
+                <a href="../../jvm/run-time-data-areas/heap/">
+            
+                    
+                        <b>2.5.3.</b>
+                    
+                    堆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="../../jvm/run-time-data-areas/method-area/">
+            
+                <a href="../../jvm/run-time-data-areas/method-area/">
+            
+                    
+                        <b>2.5.4.</b>
+                    
+                    方法区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.5" data-path="../../jvm/run-time-data-areas/run-time-constant-pool/">
+            
+                <a href="../../jvm/run-time-data-areas/run-time-constant-pool/">
+            
+                    
+                        <b>2.5.5.</b>
+                    
+                    运行时常量池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.6" data-path="../../jvm/run-time-data-areas/native-method-stacks/">
+            
+                <a href="../../jvm/run-time-data-areas/native-method-stacks/">
+            
+                    
+                        <b>2.5.6.</b>
+                    
+                    Native 方法栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../../jvm/frames/">
+            
+                <a href="../../jvm/frames/">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    帧
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="../../jvm/frames/local-variables/">
+            
+                <a href="../../jvm/frames/local-variables/">
+            
+                    
+                        <b>2.6.1.</b>
+                    
+                    局部变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="../../jvm/frames/operand-stacks/">
+            
+                <a href="../../jvm/frames/operand-stacks/">
+            
+                    
+                        <b>2.6.2.</b>
+                    
+                    操作数栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="../../jvm/frames/dynamic-linking/">
+            
+                <a href="../../jvm/frames/dynamic-linking/">
+            
+                    
+                        <b>2.6.3.</b>
+                    
+                    动态链接
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../../jvm/representation-of-objects/">
+            
+                <a href="../../jvm/representation-of-objects/">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    对象的表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../../jvm/floating-point-modes/">
+            
+                <a href="../../jvm/floating-point-modes/">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    浮点运算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../../jvm/special-methods/">
+            
+                <a href="../../jvm/special-methods/">
+            
+                    
+                        <b>2.9.</b>
+                    
+                    特殊方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../../jvm/exceptions/">
+            
+                <a href="../../jvm/exceptions/">
+            
+                    
+                        <b>2.10.</b>
+                    
+                    异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="../../jvm/instruction-set/">
+            
+                <a href="../../jvm/instruction-set/">
+            
+                    
+                        <b>2.11.</b>
+                    
+                    指令集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="../../jvm/class-libraries/">
+            
+                <a href="../../jvm/class-libraries/">
+            
+                    
+                        <b>2.12.</b>
+                    
+                    类库
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="../../jni/">
+            
+                <a href="../../jni/">
+            
+                    
+                        <b>3.</b>
+                    
+                    Java Native Interface
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Kotlin</li>
+        
+        
+    
+        <li class="chapter " data-level="1" data-path="../../../kotlin/version/">
+            
+                <a href="../../../kotlin/version/">
+            
+                    
+                        <b>1.</b>
+                    
+                    版本历史
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="../../../kotlin/version/1.2/">
+            
+                <a href="../../../kotlin/version/1.2/">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Kotlin 1.2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../kotlin/version/1.1/">
+            
+                <a href="../../../kotlin/version/1.1/">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    Kotlin 1.1
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" >
+            
+                <span>
+            
+                    
+                        <b>2.</b>
+                    
+                    Kotlin/Native
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="../../../kotlin/konan.html">
+            
+                <a href="../../../kotlin/konan.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    konan
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Dart</li>
+        
+        
+    
+        <li class="chapter " data-level="1" data-path="../../../dart/version/">
+            
+                <a href="../../../dart/version/">
+            
+                    
+                        <b>1.</b>
+                    
+                    版本历史
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="../../../dart/version/1.0/">
+            
+                <a href="../../../dart/version/1.0/">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Dart 1.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../dart/version/1.1/">
+            
+                <a href="../../../dart/version/1.1/">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    Dart 1.1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../dart/version/1.2/">
+            
+                <a href="../../../dart/version/1.2/">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    Dart 1.2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../dart/version/1.3/">
+            
+                <a href="../../../dart/version/1.3/">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    Dart 1.3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../../dart/version/1.4/">
+            
+                <a href="../../../dart/version/1.4/">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    Dart 1.4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../../dart/version/1.5/">
+            
+                <a href="../../../dart/version/1.5/">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    Dart 1.5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../../dart/version/1.6/">
+            
+                <a href="../../../dart/version/1.6/">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    Dart 1.6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../../dart/version/1.7/">
+            
+                <a href="../../../dart/version/1.7/">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    Dart 1.7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../../../dart/version/1.8/">
+            
+                <a href="../../../dart/version/1.8/">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    Dart 1.8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../../../dart/version/1.9/">
+            
+                <a href="../../../dart/version/1.9/">
+            
+                    
+                        <b>1.10.</b>
+                    
+                    Dart 1.9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../../../dart/version/1.12/">
+            
+                <a href="../../../dart/version/1.12/">
+            
+                    
+                        <b>1.11.</b>
+                    
+                    Dart 1.12
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../../../dart/version/1.13/">
+            
+                <a href="../../../dart/version/1.13/">
+            
+                    
+                        <b>1.12.</b>
+                    
+                    Dart 1.13
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../../../dart/version/1.14/">
+            
+                <a href="../../../dart/version/1.14/">
+            
+                    
+                        <b>1.13.</b>
+                    
+                    Dart 1.14
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../../../dart/version/1.15/">
+            
+                <a href="../../../dart/version/1.15/">
+            
+                    
+                        <b>1.14.</b>
+                    
+                    Dart 1.15
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../../../dart/version/1.16/">
+            
+                <a href="../../../dart/version/1.16/">
+            
+                    
+                        <b>1.15.</b>
+                    
+                    Dart 1.16
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../../../dart/version/1.17/">
+            
+                <a href="../../../dart/version/1.17/">
+            
+                    
+                        <b>1.16.</b>
+                    
+                    Dart 1.17
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../../../dart/version/1.18/">
+            
+                <a href="../../../dart/version/1.18/">
+            
+                    
+                        <b>1.17.</b>
+                    
+                    Dart 1.18
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../../../dart/version/1.19/">
+            
+                <a href="../../../dart/version/1.19/">
+            
+                    
+                        <b>1.18.</b>
+                    
+                    Dart 1.19
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="../../../dart/version/1.21/">
+            
+                <a href="../../../dart/version/1.21/">
+            
+                    
+                        <b>1.19.</b>
+                    
+                    Dart 1.21
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="../../../dart/version/1.22/">
+            
+                <a href="../../../dart/version/1.22/">
+            
+                    
+                        <b>1.20.</b>
+                    
+                    Dart 1.22
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="../../../dart/version/1.23/">
+            
+                <a href="../../../dart/version/1.23/">
+            
+                    
+                        <b>1.21.</b>
+                    
+                    Dart 1.23
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="../../../dart/version/1.24/">
+            
+                <a href="../../../dart/version/1.24/">
+            
+                    
+                        <b>1.22.</b>
+                    
+                    Dart 1.24
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="../../../dart/version/2.0/">
+            
+                <a href="../../../dart/version/2.0/">
+            
+                    
+                        <b>1.23.</b>
+                    
+                    Dart 2.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="../../../dart/version/2.1/">
+            
+                <a href="../../../dart/version/2.1/">
+            
+                    
+                        <b>1.24.</b>
+                    
+                    Dart 2.1
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Android</li>
+        
+        
+    
+        <li class="chapter " data-level="1" data-path="../../../android/version/">
+            
+                <a href="../../../android/version/">
+            
+                    
+                        <b>1.</b>
+                    
+                    版本历史
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="../../../android/version/29/">
+            
+                <a href="../../../android/version/29/">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Android 10 - Q (API 29)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../android/version/28/">
+            
+                <a href="../../../android/version/28/">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    Android 9 - Pie (API 28)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../android/version/27/">
+            
+                <a href="../../../android/version/27/">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    Android 8.1 - Oreo (API 27)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../android/version/26/">
+            
+                <a href="../../../android/version/26/">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    Android 8.0 - Oreo (API 26)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../../android/version/25/">
+            
+                <a href="../../../android/version/25/">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    Android 7.1 - Nougat (API 25)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../../android/version/24/">
+            
+                <a href="../../../android/version/24/">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    Android 7.0 - Nougat (API 24)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../../android/version/23/">
+            
+                <a href="../../../android/version/23/">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    Android 6.0 - Marshmallow (API 23)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../../android/version/22/">
+            
+                <a href="../../../android/version/22/">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    Android 5.1 - Lollipop (API 22)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../../../android/version/21/">
+            
+                <a href="../../../android/version/21/">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    Android 5.0 - Lollipop (API 21)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../../../android/version/20/">
+            
+                <a href="../../../android/version/20/">
+            
+                    
+                        <b>1.10.</b>
+                    
+                    Android 4.4W - KitKat (API 20)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../../../android/version/19/">
+            
+                <a href="../../../android/version/19/">
+            
+                    
+                        <b>1.11.</b>
+                    
+                    Android 4.4 - KitKat (API 19)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../../../android/version/18/">
+            
+                <a href="../../../android/version/18/">
+            
+                    
+                        <b>1.12.</b>
+                    
+                    Android 4.3 - Jelly Bean (API 18)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../../../android/version/17/">
+            
+                <a href="../../../android/version/17/">
+            
+                    
+                        <b>1.13.</b>
+                    
+                    Android 4.2 - Jelly Bean (API 17)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../../../android/version/16/">
+            
+                <a href="../../../android/version/16/">
+            
+                    
+                        <b>1.14.</b>
+                    
+                    Android 4.1 - Jelly Bean (API 16)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../../../android/version/15/">
+            
+                <a href="../../../android/version/15/">
+            
+                    
+                        <b>1.15.</b>
+                    
+                    Android 4.0.3 - Ice Cream Sandwich (API 15)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../../../android/version/14/">
+            
+                <a href="../../../android/version/14/">
+            
+                    
+                        <b>1.16.</b>
+                    
+                    Android 4.0 - Ice Cream Sandwich (API 14)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../../../android/version/13/">
+            
+                <a href="../../../android/version/13/">
+            
+                    
+                        <b>1.17.</b>
+                    
+                    Android 3.2 - Honeycomb (API 13)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../../../android/version/12/">
+            
+                <a href="../../../android/version/12/">
+            
+                    
+                        <b>1.18.</b>
+                    
+                    Android 3.1 - Honeycomb (API 12)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="../../../android/version/11/">
+            
+                <a href="../../../android/version/11/">
+            
+                    
+                        <b>1.19.</b>
+                    
+                    Android 3.0 - Honeycomb (API 11)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="../../../android/version/10/">
+            
+                <a href="../../../android/version/10/">
+            
+                    
+                        <b>1.20.</b>
+                    
+                    Android 2.3.3 - Gingerbread (API 10)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="../../../android/version/9/">
+            
+                <a href="../../../android/version/9/">
+            
+                    
+                        <b>1.21.</b>
+                    
+                    Android 2.3 - Gingerbread (API 9)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="../../../android/version/8/">
+            
+                <a href="../../../android/version/8/">
+            
+                    
+                        <b>1.22.</b>
+                    
+                    Android 2.2 - Froyo (API 8)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="../../../android/version/7/">
+            
+                <a href="../../../android/version/7/">
+            
+                    
+                        <b>1.23.</b>
+                    
+                    Android 2.1 - Eclair (API 7)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="../../../android/version/6/">
+            
+                <a href="../../../android/version/6/">
+            
+                    
+                        <b>1.24.</b>
+                    
+                    Android 2.0.1 - Eclair (API 6)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="../../../android/version/5/">
+            
+                <a href="../../../android/version/5/">
+            
+                    
+                        <b>1.25.</b>
+                    
+                    Android 2.0 - Eclair (API 5)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="../../../android/version/4/">
+            
+                <a href="../../../android/version/4/">
+            
+                    
+                        <b>1.26.</b>
+                    
+                    Android 1.6 - Donut (API 4)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="../../../android/version/3/">
+            
+                <a href="../../../android/version/3/">
+            
+                    
+                        <b>1.27.</b>
+                    
+                    Android 1.5 - Cupcake (API 3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="../../../android/version/2/">
+            
+                <a href="../../../android/version/2/">
+            
+                    
+                        <b>1.28.</b>
+                    
+                    Android 1.1 (API 2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="../../../android/version/1/">
+            
+                <a href="../../../android/version/1/">
+            
+                    
+                        <b>1.29.</b>
+                    
+                    Android 1.0 (API 1)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="../../../android/runtime/">
+            
+                <a href="../../../android/runtime/">
+            
+                    
+                        <b>2.</b>
+                    
+                    Runtime
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="../../../android/runtime/dalvik/">
+            
+                <a href="../../../android/runtime/dalvik/">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Dalvik VM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../../android/runtime/art/">
+            
+                <a href="../../../android/runtime/art/">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    ART
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="../../../android/framework/">
+            
+                <a href="../../../android/framework/">
+            
+                    
+                        <b>3.</b>
+                    
+                    Framework
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="../../../android/framework/view-system.html">
+            
+                <a href="../../../android/framework/view-system.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    View System
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../../android/framework/animations-and-transitions.html">
+            
+                <a href="../../../android/framework/animations-and-transitions.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Animations and Transitions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../../android/framework/graphics.html">
+            
+                <a href="../../../android/framework/graphics.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    Graphics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../../../android/framework/content-providers.html">
+            
+                <a href="../../../android/framework/content-providers.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    Content Providers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../../../android/framework/activity-manager.html">
+            
+                <a href="../../../android/framework/activity-manager.html">
+            
+                    
+                        <b>3.5.</b>
+                    
+                    Activity Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../../../android/framework/input-manager.html">
+            
+                <a href="../../../android/framework/input-manager.html">
+            
+                    
+                        <b>3.6.</b>
+                    
+                    Input Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../../../android/framework/window-manager.html">
+            
+                <a href="../../../android/framework/window-manager.html">
+            
+                    
+                        <b>3.7.</b>
+                    
+                    Window Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="../../../android/framework/notification-manager.html">
+            
+                <a href="../../../android/framework/notification-manager.html">
+            
+                    
+                        <b>3.8.</b>
+                    
+                    Notification Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="../../../android/framework/package-manager.html">
+            
+                <a href="../../../android/framework/package-manager.html">
+            
+                    
+                        <b>3.9.</b>
+                    
+                    Package Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="../../../android/framework/telephony-manager.html">
+            
+                <a href="../../../android/framework/telephony-manager.html">
+            
+                    
+                        <b>3.10.</b>
+                    
+                    Telephony Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="../../../android/framework/location-manager.html">
+            
+                <a href="../../../android/framework/location-manager.html">
+            
+                    
+                        <b>3.11.</b>
+                    
+                    Location Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="../../../android/framework/resource-manager.html">
+            
+                <a href="../../../android/framework/resource-manager.html">
+            
+                    
+                        <b>3.12.</b>
+                    
+                    Resource Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="../../../android/hal/">
+            
+                <a href="../../../android/hal/">
+            
+                    
+                        <b>4.</b>
+                    
+                    Hardware Abstraction Layer
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="../../../android/hal/audio.html">
+            
+                <a href="../../../android/hal/audio.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    Audio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../../../android/hal/bluetooth.html">
+            
+                <a href="../../../android/hal/bluetooth.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    Bluetooth
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../../../android/hal/camera.html">
+            
+                <a href="../../../android/hal/camera.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    Camera
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../../../android/hal/sensors.html">
+            
+                <a href="../../../android/hal/sensors.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    Sensors
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="../../../android/kernel/">
+            
+                <a href="../../../android/kernel/">
+            
+                    
+                        <b>5.</b>
+                    
+                    Linux Kernel
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="../../../android/kernel/binder.html">
+            
+                <a href="../../../android/kernel/binder.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    Binder
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="../../../android/ndk/">
+            
+                <a href="../../../android/ndk/">
+            
+                    
+                        <b>6.</b>
+                    
+                    NDK
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="../../../android/ndk/jni.html">
+            
+                <a href="../../../android/ndk/jni.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    Java Native Interface
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../../../android/ndk/building.html">
+            
+                <a href="../../../android/ndk/building.html">
+            
+                    
+                        <b>6.2.</b>
+                    
+                    Building
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../../../android/ndk/cpus-and-architectures.html">
+            
+                <a href="../../../android/ndk/cpus-and-architectures.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    CPUs and Architectures
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../../../android/ndk/debugging.html">
+            
+                <a href="../../../android/ndk/debugging.html">
+            
+                    
+                        <b>6.4.</b>
+                    
+                    Debugging
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="../../../android/security/">
+            
+                <a href="../../../android/security/">
+            
+                    
+                        <b>7.</b>
+                    
+                    Security
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="../../../android/security/app-sandbox.html">
+            
+                <a href="../../../android/security/app-sandbox.html">
+            
+                    
+                        <b>7.1.</b>
+                    
+                    Application Sandbox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../../../android/security/app-signing/">
+            
+                <a href="../../../android/security/app-signing/">
+            
+                    
+                        <b>7.2.</b>
+                    
+                    Application Signing
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.2.1" data-path="../../../android/security/apk-signing/v3.html">
+            
+                <a href="../../../android/security/apk-signing/v3.html">
+            
+                    
+                        <b>7.2.1.</b>
+                    
+                    APK Signature Scheme V3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.2" data-path="../../../android/security/apk-signing/v2.html">
+            
+                <a href="../../../android/security/apk-signing/v2.html">
+            
+                    
+                        <b>7.2.2.</b>
+                    
+                    APK Signature Scheme V2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../../../android/security/authentication/">
+            
+                <a href="../../../android/security/authentication/">
+            
+                    
+                        <b>7.3.</b>
+                    
+                    Authentication
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.3.1" data-path="../../../android/security/authentication/fingerprint-hal.html">
+            
+                <a href="../../../android/security/authentication/fingerprint-hal.html">
+            
+                    
+                        <b>7.3.1.</b>
+                    
+                    Fingerpring HAL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3.2" data-path="../../../android/security/authentication/gatekeeper.html">
+            
+                <a href="../../../android/security/authentication/gatekeeper.html">
+            
+                    
+                        <b>7.3.2.</b>
+                    
+                    Gatekeeper
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../../../android/security/biometric/">
+            
+                <a href="../../../android/security/biometric/">
+            
+                    
+                        <b>7.4.</b>
+                    
+                    Biometric Unlock
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.4.1" data-path="../../../android/security/biometric/measuring.html">
+            
+                <a href="../../../android/security/biometric/measuring.html">
+            
+                    
+                        <b>7.4.1.</b>
+                    
+                    Measuring Biometric Security
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../../../android/security/keystore/">
+            
+                <a href="../../../android/security/keystore/">
+            
+                    
+                        <b>7.5.</b>
+                    
+                    Hardware-backed Key Store
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="../../../android/security/trusty/">
+            
+                <a href="../../../android/security/trusty/">
+            
+                    
+                        <b>7.6.</b>
+                    
+                    Trusty TEE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="../../../android/security/encryption/">
+            
+                <a href="../../../android/security/encryption/">
+            
+                    
+                        <b>7.7.</b>
+                    
+                    Encryption
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.7.1" data-path="../../../android/security/encryption/file-based.html">
+            
+                <a href="../../../android/security/encryption/file-based.html">
+            
+                    
+                        <b>7.7.1.</b>
+                    
+                    File-Based Encryption
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7.2" data-path="../../../android/security/encryption/full-disk.html">
+            
+                <a href="../../../android/security/encryption/full-disk.html">
+            
+                    
+                        <b>7.7.2.</b>
+                    
+                    Full-Disk Encryption
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7.3" data-path="../../../android/security/encryption/metadata.html">
+            
+                <a href="../../../android/security/encryption/metadata.html">
+            
+                    
+                        <b>7.7.3.</b>
+                    
+                    Metadata Encryption
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8" data-path="../../../android/security/selinux/">
+            
+                <a href="../../../android/security/selinux/">
+            
+                    
+                        <b>7.8.</b>
+                    
+                    SELinux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.9" data-path="../../../android/security/verified-boot/">
+            
+                <a href="../../../android/security/verified-boot/">
+            
+                    
+                        <b>7.9.</b>
+                    
+                    Verified Boot
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">垃圾回收</li>
+        
+        
+    
+        <li class="chapter " data-level="1" data-path="../../../garbage-collection/memory-management/">
+            
+                <a href="../../../garbage-collection/memory-management/">
+            
+                    
+                        <b>1.</b>
+                    
+                    内存管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="../../../garbage-collection/memory-management/manual.html">
+            
+                <a href="../../../garbage-collection/memory-management/manual.html">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    手动管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../garbage-collection/memory-management/automated.html">
+            
+                <a href="../../../garbage-collection/memory-management/automated.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    自动管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="../../../garbage-collection/gc-in-java/">
+            
+                <a href="../../../garbage-collection/gc-in-java/">
+            
+                    
+                        <b>2.</b>
+                    
+                    Garbage Collection in Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="../../../garbage-collection/gc-in-java/fragmenting-and-compacting.html">
+            
+                <a href="../../../garbage-collection/gc-in-java/fragmenting-and-compacting.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    分段和压缩
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../../garbage-collection/gc-in-java/generational-hypothesis.html">
+            
+                <a href="../../../garbage-collection/gc-in-java/generational-hypothesis.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    代际假设
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../../garbage-collection/gc-in-java/memory-pools.html">
+            
+                <a href="../../../garbage-collection/gc-in-java/memory-pools.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    内存池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../../../garbage-collection/gc-in-java/minor-gc.html">
+            
+                <a href="../../../garbage-collection/gc-in-java/minor-gc.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    Minor GC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../../../garbage-collection/gc-in-java/major-gc.html">
+            
+                <a href="../../../garbage-collection/gc-in-java/major-gc.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    Major GC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../../../garbage-collection/gc-in-java/full-gc.html">
+            
+                <a href="../../../garbage-collection/gc-in-java/full-gc.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    Full GC
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="../../../garbage-collection/gc-in-android/">
+            
+                <a href="../../../garbage-collection/gc-in-android/">
+            
+                    
+                        <b>3.</b>
+                    
+                    Garbage Collection in Android
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="../../../garbage-collection/gc-in-android/dalvik.html">
+            
+                <a href="../../../garbage-collection/gc-in-android/dalvik.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    Dalvik
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../../garbage-collection/gc-in-android/art.html">
+            
+                <a href="../../../garbage-collection/gc-in-android/art.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    ART
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="../../../garbage-collection/gc-algorithms/">
+            
+                <a href="../../../garbage-collection/gc-algorithms/">
+            
+                    
+                        <b>4.</b>
+                    
+                    GC 算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="../../../garbage-collection/gc-algorithms/marking-reachable-objects.html">
+            
+                <a href="../../../garbage-collection/gc-algorithms/marking-reachable-objects.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    标记可达对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../../../garbage-collection/gc-algorithms/removing-unused-objects.html">
+            
+                <a href="../../../garbage-collection/gc-algorithms/removing-unused-objects.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    移除无用对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="../../../garbage-collection/gc-implementations/">
+            
+                <a href="../../../garbage-collection/gc-implementations/">
+            
+                    
+                        <b>5.</b>
+                    
+                    GC 实现
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="../../../garbage-collection/gc-implementations/serial-gc.html">
+            
+                <a href="../../../garbage-collection/gc-implementations/serial-gc.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    串行 GC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../../../garbage-collection/gc-implementations/parallel-gc.html">
+            
+                <a href="../../../garbage-collection/gc-implementations/parallel-gc.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    并行 GC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../../../garbage-collection/gc-implementations/concurrent-mark-and-sweep.html">
+            
+                <a href="../../../garbage-collection/gc-implementations/concurrent-mark-and-sweep.html">
+            
+                    
+                        <b>5.3.</b>
+                    
+                    并发标记清除
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../../../garbage-collection/gc-implementations/g1.html">
+            
+                <a href="../../../garbage-collection/gc-implementations/g1.html">
+            
+                    
+                        <b>5.4.</b>
+                    
+                    G1 - Garbage First
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../../../garbage-collection/gc-implementations/zgc.html">
+            
+                <a href="../../../garbage-collection/gc-implementations/zgc.html">
+            
+                    
+                        <b>5.5.</b>
+                    
+                    Z GC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="../../../garbage-collection/gc-implementations/shenandoah.html">
+            
+                <a href="../../../garbage-collection/gc-implementations/shenandoah.html">
+            
+                    
+                        <b>5.6.</b>
+                    
+                    Shenandoah
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">编译器</li>
+        
+        
+    
+        <li class="chapter " data-level="1" data-path="../../../compiler/jit/">
+            
+                <a href="../../../compiler/jit/">
+            
+                    
+                        <b>1.</b>
+                    
+                    JIT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="../../../compiler/aot/">
+            
+                <a href="../../../compiler/aot/">
+            
+                    
+                        <b>2.</b>
+                    
+                    AOT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">设计模式</li>
+        
+        
+    
+        <li class="chapter " data-level="1" >
+            
+                <span>
+            
+                    
+                        <b>1.</b>
+                    
+                    创造型
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="../../../design-pattern/abstract-factory.html">
+            
+                <a href="../../../design-pattern/abstract-factory.html">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Abstract Factory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../design-pattern/builder.html">
+            
+                <a href="../../../design-pattern/builder.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    Builder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../design-pattern/factory-method.html">
+            
+                <a href="../../../design-pattern/factory-method.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    Factory Method
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../design-pattern/object-pool.html">
+            
+                <a href="../../../design-pattern/object-pool.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    Object Pool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../../design-pattern/prototype.html">
+            
+                <a href="../../../design-pattern/prototype.html">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    Prototype
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../../design-pattern/singleton.html">
+            
+                <a href="../../../design-pattern/singleton.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    Singleton
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" >
+            
+                <span>
+            
+                    
+                        <b>2.</b>
+                    
+                    结构型
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="../../../design-pattern/adapter.html">
+            
+                <a href="../../../design-pattern/adapter.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Adapter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../../design-pattern/bridge.html">
+            
+                <a href="../../../design-pattern/bridge.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    Bridge
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../../design-pattern/composite.html">
+            
+                <a href="../../../design-pattern/composite.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    Composite
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../../../design-pattern/decorator.html">
+            
+                <a href="../../../design-pattern/decorator.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    Decorator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../../../design-pattern/facade.html">
+            
+                <a href="../../../design-pattern/facade.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    Facade
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../../../design-pattern/flyweight.html">
+            
+                <a href="../../../design-pattern/flyweight.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    Flyweight
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../../../design-pattern/private-class-data.html">
+            
+                <a href="../../../design-pattern/private-class-data.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    Private Class Data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../../../design-pattern/proxy.html">
+            
+                <a href="../../../design-pattern/proxy.html">
+            
+                    
+                        <b>2.8.</b>
+                    
+                    Proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" >
+            
+                <span>
+            
+                    
+                        <b>3.</b>
+                    
+                    行为型
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="../../../design-pattern/chain-of-responsibility.html">
+            
+                <a href="../../../design-pattern/chain-of-responsibility.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    Chain of Responsibility
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../../design-pattern/command.html">
+            
+                <a href="../../../design-pattern/command.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Command
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../../design-pattern/interpreter.html">
+            
+                <a href="../../../design-pattern/interpreter.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    Interpreter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../../../design-pattern/iterator.html">
+            
+                <a href="../../../design-pattern/iterator.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    Iterator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../../../design-pattern/mediator.html">
+            
+                <a href="../../../design-pattern/mediator.html">
+            
+                    
+                        <b>3.5.</b>
+                    
+                    Mediator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../../../design-pattern/memento.html">
+            
+                <a href="../../../design-pattern/memento.html">
+            
+                    
+                        <b>3.6.</b>
+                    
+                    Memento
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../../../design-pattern/null-object.html">
+            
+                <a href="../../../design-pattern/null-object.html">
+            
+                    
+                        <b>3.7.</b>
+                    
+                    Null Object
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="../../../design-pattern/observer.html">
+            
+                <a href="../../../design-pattern/observer.html">
+            
+                    
+                        <b>3.8.</b>
+                    
+                    Observer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="../../../design-pattern/state.html">
+            
+                <a href="../../../design-pattern/state.html">
+            
+                    
+                        <b>3.9.</b>
+                    
+                    State
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="../../../design-pattern/strategy.html">
+            
+                <a href="../../../design-pattern/strategy.html">
+            
+                    
+                        <b>3.10.</b>
+                    
+                    Strategy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="../../../design-pattern/template-method.html">
+            
+                <a href="../../../design-pattern/template-method.html">
+            
+                    
+                        <b>3.11.</b>
+                    
+                    Template Method
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="../../../design-pattern/visitor.html">
+            
+                <a href="../../../design-pattern/visitor.html">
+            
+                    
+                        <b>3.12.</b>
+                    
+                    Visitor
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../.." >Java SE 11</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="java-se-11-&#x65B0;&#x7279;&#x6027;">Java SE 11 &#x65B0;&#x7279;&#x6027;</h1>
+<h2 id="local-variable-syntax-for-lambda-parameters">Local-Variable Syntax for Lambda Parameters</h2>
+<p>&#x65E9;&#x5728; Java 10 &#x4E2D;&#x5C31;&#x5F15;&#x5165;&#x4E86;&#x672C;&#x5730;&#x53D8;&#x91CF;&#x7C7B;&#x578B;&#x63A8;&#x65AD;&#xFF0C;&#x4F46;&#x4EC5;&#x652F;&#x6301;&#x666E;&#x901A;&#x7684;&#x53D8;&#x91CF;&#x58F0;&#x660E;&#xFF0C;&#x800C;&#x5728; Java 11 &#x4E2D;&#x5F15;&#x5165;&#x4E86;&#x66F4;&#x5F3A;&#x5927;&#x7684;&#x7C7B;&#x578B;&#x63A8;&#x65AD;&#xFF0C;&#x652F;&#x6301; <em>Lambda</em> &#x53C2;&#x6570;&#xFF0C;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-java">(var x, var y) -&gt; x.process(y);
+</code></pre>
+<p>&#x7B49;&#x540C;&#x4E8E;&#xFF1A;</p>
+<pre><code class="lang-java">(x, y) -&gt; x.process(y);
+</code></pre>
+<p>&#x26A0;&#xFE0F; &#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x5728;&#x4F7F;&#x7528; <code>var</code> &#x58F0;&#x660E;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5FC5;&#x987B;&#x6240;&#x6709;&#x53C2;&#x6570;&#x540C;&#x65F6;&#x90FD;&#x7528; <code>var</code> &#x58F0;&#x660E;&#xFF0C;&#x4EE5;&#x4E0B;&#x662F;&#x9519;&#x8BEF;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-java">(var x, y) -&gt; x.process(y);
+(var x, <span class="hljs-keyword">int</span> y) -&gt; x.process(y);
+</code></pre>
+<h2 id="launch-single-file-source-code-programs">Launch Single-File Source-Code Programs</h2>
+<p>&#x81EA;&#x4ECE; Java 9 &#x5F15;&#x5165;&#x4E86; <em>jshell</em>&#xFF0C;Java &#x8BED;&#x8A00;&#x5F00;&#x59CB;&#x671D;&#x7740;&#x811A;&#x672C;&#x8BED;&#x8A00;&#x7684;&#x65B9;&#x5411;&#x6F14;&#x5316;&#xFF0C;&#x5728; Java 11 &#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x7C7B; Unix &#x7CFB;&#x7EDF;&#x4E0A;&#x4F7F;&#x7528; <em>shebang</em><sup><a href="#fn_1" id="reffn_1">1</a></sup>&#x6807;&#x8BC6;&#x7B26;&#x76F4;&#x63A5;&#x8FD0;&#x884C;&#x5355;&#x4E2A; <em>.java</em> &#x6587;&#x4EF6;&#xFF0C;&#x5982;&#xFF1A;</p>
+<div><p class="code-filename">Main.java</p></div>
+<pre><code class="lang-java">#!/usr/bin/java --source 11
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(&quot;Hello, Java 11!);
+    }
+}
+</code></pre>
+<p>&#x7136;&#x540E;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x76F4;&#x63A5;&#x6267;&#x884C;&#xFF1A;</p>
+<pre><code class="lang-shell">java Main.java
+</code></pre>
+<h2 id="unicode-10">Unicode 10</h2>
+<p>Java 11 &#x5F00;&#x59CB;&#x652F;&#x6301; <a href="http://www.unicode.org/standard/standard.html" target="_blank">Unicode Standard</a> <a href="http://unicode.org/versions/Unicode10.0.0/" target="_blank">Version 10.0</a>&#xFF0C;&#x4E3B;&#x8981;&#x5305;&#x542B;&#x4EE5;&#x4E0B;&#x7684;&#x7C7B;&#xFF1A;</p>
+<ul>
+<li><em>java.lang</em> : <code>Character</code> and <code>String</code></li>
+<li><em>java.awt.font</em> : <code>NumericShaper</code></li>
+<li><em>java.text</em> : <code>Bidi</code>, <code>BreakIterator</code>, and <code>Normalizer</code></li>
+</ul>
+<h2 id="http-client-standard">HTTP Client (Standard)</h2>
+<p>&#x4ECE; Java 9 &#x5F00;&#x59CB;&#x5F15;&#x5165;&#x7684; <em>HTTP Client</em> &#x5728; Java 11 &#x4E2D;&#x88AB;&#x6807;&#x51C6;&#x5316;&#xFF0C;&#x5728; Java 11 &#x4E2D;&#xFF0C;<em>HTTP Client</em> &#x7684;&#x5B9E;&#x73B0;&#x51E0;&#x4E4E;&#x5168;&#x90E8;&#x91CD;&#x5199;&#xFF0C;&#x7531;&#x539F;&#x6765; HTTP/1.1 &#x963B;&#x585E;&#x5F0F;&#x7684;&#x5B9E;&#x73B0;&#x6539;&#x4E3A;&#x5B8C;&#x5168;&#x5F02;&#x6B65;&#x3002;&#x5728;&#x65B0;&#x7684;&#x5B9E;&#x73B0;&#x4E2D;&#xFF0C;&#x6570;&#x636E;&#x6D41;&#x80FD;&#x591F;&#x66F4;&#x597D;&#x7684;&#x88AB;&#x8FFD;&#x8E2A;&#xFF0C;&#x5927;&#x5927;&#x7684;&#x964D;&#x4F4E;&#x4E86;&#x6982;&#x5FF5;&#x7684;&#x6570;&#x91CF;&#x548C;&#x4EE3;&#x7801;&#x7684;&#x590D;&#x6742;&#x5EA6;&#xFF0C;&#x5E76;&#x4F7F;&#x5F97;&#x5728; HTTP/1.1 &#x548C; HTTP / 2 &#x4E4B;&#x95F4;&#x7684;&#x91CD;&#x7528;&#x6027;&#x6700;&#x5927;&#x5316;</p>
+<h2 id="lazy-allocation-of-compiler-threads">Lazy Allocation of Compiler Threads</h2>
+<p>&#x5728; Java 11 &#x4E2D;&#x589E;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x6807;&#x5FD7;&#xFF1A;<em>-XX:+UseDynamicNumberOfCompilerThreads</em> &#x7528;&#x4E8E;&#x52A8;&#x6001;&#x5730;&#x63A7;&#x5236;&#x7F16;&#x8BD1;&#x5668;&#x7EBF;&#x7A0B;&#x3002;&#x5728;&#x9ED8;&#x8BA4;&#x5F00;&#x542F;&#x7684;&#x5206;&#x5C42;&#x7F16;&#x8BD1;&#x6A21;&#x5F0F;&#x4E2D;&#xFF0C;&#x65E0;&#x8BBA;&#x53EF;&#x7528;&#x5185;&#x5B58;&#x548C;&#x7F16;&#x8BD1;&#x8BF7;&#x6C42;&#x7684;&#x6570;&#x91CF;&#x5982;&#x4F55;&#xFF0C;&#x865A;&#x62DF;&#x673A;&#x90FD;&#x4F1A;&#x5728;&#x591A; CPU &#x7CFB;&#x7EDF;&#x4E0A;&#x542F;&#x52A8;&#x4E86;&#x5927;&#x91CF;&#x7684;&#x7F16;&#x8BD1;&#x7EBF;&#x7A0B;&#x3002; &#x56E0;&#x4E3A;&#x5373;&#x4F7F;&#x662F;&#x7A7A;&#x95F2;&#x65F6;&#xFF0C;&#x7EBF;&#x7A0B;&#x4E5F;&#x4F1A;&#x6D88;&#x8017;&#x5185;&#x5B58;&#xFF08;&#x51E0;&#x4E4E;&#x6240;&#x6709;&#x65F6;&#x95F4;&#x90FD;&#x662F;&#x5982;&#x6B64;&#xFF09;&#xFF0C;&#x8FD9;&#x4F1A;&#x5BFC;&#x81F4;&#x8D44;&#x6E90;&#x7684;&#x4F4E;&#x6548;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;Java 11 &#x5DF2;&#x7ECF;&#x66F4;&#x6539;&#x4E86;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#xFF0C;&#x5728;&#x542F;&#x52A8;&#x671F;&#x95F4;&#x53EA;&#x542F;&#x52A8;&#x6BCF;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x4E00;&#x4E2A;&#x7F16;&#x8BD1;&#x5668;&#x7EBF;&#x7A0B;&#xFF0C;&#x5E76;&#x52A8;&#x6001;&#x5904;&#x7406;&#x540E;&#x7EED;&#x7EBF;&#x7A0B;&#x7684;&#x542F;&#x52A8;&#x548C;&#x5173;&#x95ED;&#x3002; &#x5B83;&#x7531;&#x65B0;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x6807;&#x5FD7; <em>-XX:+UseDynamicNumberOfCompilerThreads</em> &#x63A7;&#x5236;&#xFF0C;&#x9ED8;&#x8BA4;&#x5F00;&#x542F;&#x3002;</p>
+<h2 id="zgc---a-scalable-low-latency-garbage-collector">ZGC - A Scalable Low-Latency Garbage Collector</h2>
+<p>ZGC &#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x4F38;&#x7F29;&#x7684;&#x4F4E;&#x5EF6;&#x8FDF;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#xFF0C; &#x5B83;&#x65E8;&#x5728;&#x5B9E;&#x73B0;&#x4EE5;&#x4E0B;&#x76EE;&#x6807;&#xFF1A;</p>
+<ul>
+<li>&#x6682;&#x505C;&#x65F6;&#x95F4;&#x4E0D;&#x5F97;&#x8D85;&#x8FC7;10&#x6BEB;&#x79D2;</li>
+<li>&#x6682;&#x505C;&#x65F6;&#x95F4;&#x4E0D;&#x4F1A;&#x968F;&#x7740;&#x5806;&#x6216;&#x5B9E;&#x65F6;&#x8BBE;&#x7F6E;&#x5927;&#x5C0F;&#x800C;&#x589E;&#x52A0;</li>
+<li>&#x5904;&#x7406;&#x5927;&#x5C0F;&#x4ECE;&#x51E0;&#x767E;&#x5146;&#x5230;&#x591A;&#x5146;&#x5B57;&#x8282;&#x4E0D;&#x7B49;&#x7684;&#x4FE1;&#x606F;</li>
+</ul>
+<p>ZGC &#x662F;&#x4E00;&#x4E2A;&#x5E76;&#x53D1;&#x7684;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x6240;&#x6709;&#x7E41;&#x91CD;&#x7684;&#x5DE5;&#x4F5C;&#xFF08;&#x6807;&#x8BB0;&#x3001;&#x538B;&#x7F29;&#x3001;&#x53C2;&#x8003;&#x5904;&#x7406;&#x3001;&#x5B57;&#x7B26;&#x4E32;&#x8868;&#x6E05;&#x7406;&#x7B49;&#xFF09;&#x90FD;&#x662F;&#x5728; Java &#x7EBF;&#x7A0B;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#x5B8C;&#x6210;&#x7684;&#x3002; &#x8FD9;&#x6781;&#x5927;&#x5730;&#x9650;&#x5236;&#x4E86;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5BF9;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x54CD;&#x5E94;&#x65F6;&#x95F4;&#x7684;&#x8D1F;&#x9762;&#x5F71;&#x54CD;&#x3002;</p>
+<p>&#x4ECE; ZGC &#x4E0E; G1 &#x7684; benchmark &#x5BF9;&#x6BD4;&#x6765;&#x770B;&#xFF0C;&#x7B80;&#x76F4;&#x4EE4;&#x4EBA;&#x60CA;&#x53F9;&#xFF0C;&#x4EC5;&#x7528;&#x4E86;&#x4E0D;&#x5230; 2 &#x6BEB;&#x79D2;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right"></th>
+<th style="text-align:center">ZGC</th>
+<th style="text-align:center">G1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">avg</td>
+<td style="text-align:center">1.091ms (+/-0.215ms)</td>
+<td style="text-align:center">156.806ms (+/-71.126ms)</td>
+</tr>
+<tr>
+<td style="text-align:right">95th percentile</td>
+<td style="text-align:center">1.380ms</td>
+<td style="text-align:center">316.672ms</td>
+</tr>
+<tr>
+<td style="text-align:right">99th percentile</td>
+<td style="text-align:center">1.512ms</td>
+<td style="text-align:center">428.095ms</td>
+</tr>
+<tr>
+<td style="text-align:right">99.9th percentile</td>
+<td style="text-align:center">1.663ms</td>
+<td style="text-align:center">543.846ms</td>
+</tr>
+<tr>
+<td style="text-align:right">99.99th percentile</td>
+<td style="text-align:center">1.681ms</td>
+<td style="text-align:center">543.846ms</td>
+</tr>
+<tr>
+<td style="text-align:right">max</td>
+<td style="text-align:center">1.681ms</td>
+<td style="text-align:center">543.846ms</td>
+</tr>
+</tbody>
+</table>
+<p>&#x4F5C;&#x4E3A; Java 11 &#x7684;&#x4E00;&#x4E2A;&#x5B9E;&#x9A8C;&#x7279;&#x5F81;&#xFF0C;&#x5F00;&#x542F; ZGC &#x9700;&#x8981;&#x901A;&#x8FC7; <em>-XX:+UnlockExperimentalVMOptions</em> &#x9009;&#x9879;&#x4E0E; <em>-XX:+UseZGC</em> &#x9009;&#x9879;&#x7ED3;&#x5408;&#x4F7F;&#x7528;&#xFF0C;&#x4E0D;&#x8FC7;&#x5B83;&#x6709;&#x5982;&#x4E0B;&#x9650;&#x5236;&#xFF1A;</p>
+<ul>
+<li>&#x53EA;&#x80FD;&#x5728; linux / x64&#x4E0A;&#x4F7F;&#x7528;&#x3002;</li>
+<li>&#x4E0D;&#x652F;&#x6301; <em>Compressed Oops</em><sup><a href="#fn_2" id="reffn_2">2</a></sup> &#x548C; <em>Compressed Class Pointers</em><sup><a href="#fn_3" id="reffn_3">3</a></sup>&#xFF0C;<em>XX:+UseCompressedOops</em> &#x548C; <em>-XX:+UseCompressedClassPointers</em> &#x9009;&#x9879;&#x9ED8;&#x8BA4;&#x7981;&#x7528;</li>
+<li>&#x4E0D;&#x652F;&#x6301;&#x7C7B;&#x5378;&#x8F7D;&#xFF0C;<em>XX:+</em>ClassUnloading<em> &#x548C; </em>-XX:+ClassUnloadingWithConcurrentMark* &#x9009;&#x9879;&#x9ED8;&#x8BA4;&#x7981;&#x7528;</li>
+<li>&#x4E0D;&#x652F;&#x6301;&#x4F7F;&#x7528; ZGC &#x4E0E; Graal &#x4E00;&#x8D77;&#x4F7F;&#x7528;</li>
+</ul>
+<h2 id="epsilon---a-no-op-garbage-collector">Epsilon - A No-Op Garbage Collector</h2>
+<p>Epsilon GC &#x662F; Java 11 &#x5F15;&#x5165;&#x7684;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5B9E;&#x9A8C;&#x6027;&#x65E0;&#x64CD;&#x4F5C;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x3002; Epsilon GC &#x4EC5;&#x5904;&#x7406;&#x5185;&#x5B58;&#x5206;&#x914D;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x5B9E;&#x73B0;&#x4EFB;&#x4F55;&#x5185;&#x5B58;&#x56DE;&#x6536;&#x673A;&#x5236;&#x3002; &#x5B83;&#x5BF9;&#x6027;&#x80FD;&#x6D4B;&#x8BD5;&#x975E;&#x5E38;&#x6709;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x4E0E;&#x5176;&#x4ED6; GC &#x7684;&#x6210;&#x672C;/&#x6536;&#x76CA;&#x8FDB;&#x884C;&#x5BF9;&#x6BD4;&#x3002; &#x5B83;&#x53EF;&#x7528;&#x4E8E;&#x5728;&#x6D4B;&#x8BD5;&#x4E2D;&#x65B9;&#x4FBF;&#x5730;&#x65AD;&#x8A00;&#x5185;&#x5B58;&#x5360;&#x7528;&#x548C;&#x5185;&#x5B58;&#x538B;&#x529B;&#x3002; &#x5728;&#x6781;&#x7AEF;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5B83;&#x53EF;&#x80FD;&#x5BF9;&#x975E;&#x5E38;&#x77ED;&#x6682;&#x7684;&#x4EFB;&#x52A1;&#x5F88;&#x6709;&#x7528;&#xFF0C;&#x5176;&#x4E2D;&#x5185;&#x5B58;&#x56DE;&#x6536;&#x5C06;&#x5728; JVM &#x7EC8;&#x6B62;&#x65F6;&#x53D1;&#x751F;&#xFF0C;&#x6216;&#x8005;&#x5728;&#x4F4E;&#x5783;&#x573E;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#x83B7;&#x5F97;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x5EF6;&#x8FDF;&#x6539;&#x8FDB;&#x3002;</p>
+<h2 id="low-overhead-heap-profiling">Low-Overhead Heap Profiling</h2>
+<p>Java 11 &#x4E2D;&#x63D0;&#x4F9B;&#x4E00;&#x79CD;&#x4F4E;&#x5F00;&#x9500;&#x7684; Java &#x5806;&#x5206;&#x914D;&#x65B9;&#x5F0F;&#xFF0C;&#x65E8;&#x5728;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<ul>
+<li>&#x4F4E;&#x5F00;&#x9500;&#x8DB3;&#x4EE5;&#x5728;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x6301;&#x7EED;&#x542F;&#x7528;</li>
+<li>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x5B9A;&#x4E49;&#x660E;&#x786E;&#x7684;&#x7A0B;&#x5E8F;&#x63A5;&#x53E3;&#xFF08;JVMTI&#xFF09;&#x8BBF;&#x95EE;</li>
+<li>&#x53EF;&#x4EE5;&#x5BF9;&#x6240;&#x6709;&#x5206;&#x914D;&#x8FDB;&#x884C;&#x91C7;&#x6837;&#xFF08;&#x4E0D;&#x9650;&#x4E8E;&#x5728;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x5806;&#x533A;&#x57DF;&#x6216;&#x7279;&#x5B9A;&#x65B9;&#x5F0F;&#x7684;&#x5206;&#x914D;&#xFF09;</li>
+<li>&#x53EF;&#x4EE5;&#x4EE5;&#x4E00;&#x79CD;&#x72EC;&#x7ACB;&#x4E8E;&#x5B9E;&#x73B0;&#x7684;&#x65B9;&#x5F0F;&#x5B9A;&#x4E49;&#xFF08;&#x4E0D;&#x4F9D;&#x8D56;&#x4EFB;&#x4F55;&#x7279;&#x5B9A;&#x7684; GC &#x7B97;&#x6CD5;&#x6216; VM &#x5B9E;&#x73B0;&#xFF09;</li>
+<li>&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x5173;&#x4E8E;&#x6D3B;&#x7684;&#x548C;&#x6B7B;&#x7684; Java &#x5BF9;&#x8C61;&#x7684;&#x4FE1;&#x606F;</li>
+</ul>
+<h2 id="nest-based-access-control">Nest-Based Access Control</h2>
+<p>&#x5728;Java SE 11&#x4E2D;&#xFF0C;Java &#x865A;&#x62DF;&#x673A;&#x652F;&#x6301;&#x5C06;&#x7C7B;&#x548C;&#x63A5;&#x53E3;&#x653E;&#x5230;&#x65B0;&#x7684;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#xFF0C;&#x79F0;&#x4E3A;&#x5D4C;&#x5957;&#x3002;&#x5D4C;&#x5957;&#x5141;&#x8BB8;&#x7C7B;&#x548C;&#x63A5;&#x53E3;&#x5728;&#x903B;&#x8F91;&#x4E0A;&#x5C5E;&#x4E8E;&#x540C;&#x4E00;&#x4EE3;&#x7801;&#x5B9E;&#x4F53;&#xFF0C;&#x4F46;&#x662F;&#x88AB;&#x7F16;&#x8BD1;&#x4E3A;&#x4E0D;&#x540C;&#x7684;&#x7C7B;&#x6587;&#x4EF6;&#xFF0C;&#x4EE5;&#x8BBF;&#x95EE;&#x5F7C;&#x6B64;&#x7684;&#x79C1;&#x6709;&#x6210;&#x5458;&#xFF0C;&#x800C;&#x65E0;&#x9700;&#x7F16;&#x8BD1;&#x5668;&#x63D2;&#x5165;&#x53EF;&#x8BBF;&#x95EE;&#x6027;&#x6269;&#x5C55;&#x6865;&#x63A5;&#x65B9;&#x6CD5;&#x3002;&#x5D4C;&#x5957;&#x662F; Java SE &#x5E73;&#x53F0;&#x7684;&#x4F4E;&#x7EA7;&#x673A;&#x5236;&#xFF1B;Java &#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x7684;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x89C4;&#x5219;&#x6CA1;&#x6709;&#x53D8;&#x5316;&#x3002;&#x901A;&#x8FC7;&#x751F;&#x6210;&#x65B0;&#x7684;&#x7C7B;&#x6587;&#x4EF6;&#x5C5E;&#x6027;&#xFF08;&#x5C06;&#x9876;&#x7EA7;&#x7C7B;&#xFF08;&#x6216;&#x63A5;&#x53E3;&#xFF09;&#x53CA;&#x5176;&#x6240;&#x6709;&#x5D4C;&#x5957;&#x7C7B;&#x548C;&#x63A5;&#x53E3;&#x653E;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x5D4C;&#x5957;&#x4E2D;&#xFF09;&#xFF0C;<em>javac</em> &#x7F16;&#x8BD1;&#x5668;&#x5728;&#x7F16;&#x8BD1; Java &#x6E90;&#x4EE3;&#x7801;&#x4E2D;&#x7684;&#x5D4C;&#x5957;&#x7C7B;&#x548C;&#x63A5;&#x53E3;&#x65F6;&#x4F7F;&#x7528;&#x5D4C;&#x5957;&#x3002;&#x5728;&#x68C0;&#x67E5;&#x79C1;&#x6709;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x65B9;&#x6CD5;&#x6216;&#x5B57;&#x6BB5;&#x7684;&#x53EF;&#x8BBF;&#x95EE;&#x6027;&#x65F6;&#xFF0C;Java &#x865A;&#x62DF;&#x673A;&#x5219;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#xFF0C;&#x5305;&#x62EC;&#x901A;&#x8FC7;&#x6838;&#x5FC3;&#x53CD;&#x5C04;&#x548C;<code>java.lang.invoke.MethodHandles.Lookup</code> API&#x3002;&#x5D4C;&#x5957;&#x4E2D;&#x7684;&#x6210;&#x5458;&#x901A;&#x8FC7; <code>java.lang.Class</code> &#x7684; <code>getNestHost</code> &#x548C; <code>getNestMembers</code> &#x65B9;&#x6CD5;&#x66B4;&#x9732;&#x51FA;&#x6765;&#x3002;</p>
+<p>&#x7531;&#x4E8E;&#x5D4C;&#x5957;&#x6210;&#x5458;&#x8BB0;&#x5F55;&#x5728;&#x9876;&#x7EA7;&#x7C7B;&#x6216;&#x63A5;&#x53E3;&#xFF08;&#x5D4C;&#x5957;&#x5BBF;&#x4E3B;&#xFF09;&#x7684;&#x7C7B;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x56E0;&#x6B64;&#x8BE5;&#x7C7B;&#x6587;&#x4EF6;&#x5FC5;&#x987B;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x5B58;&#x5728;&#xFF0C;&#x4EE5;&#x5141;&#x8BB8;&#x6267;&#x884C;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x68C0;&#x67E5;&#x3002; &#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#x90FD;&#x4E0D;&#x4F1A;&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x56E0;&#x4E3A;&#x901A;&#x5E38;&#x90FD;&#x662F;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x9876;&#x7EA7;&#x7C7B;&#x6216;&#x63A5;&#x53E3;&#x3002; &#x5728;&#x67D0;&#x4E9B;&#x9876;&#x7EA7;&#x7C7B;&#x6216;&#x63A5;&#x53E3;&#x4EC5;&#x4F5C;&#x4E3A;&#x5D4C;&#x5957;&#x7C7B;&#x6216;&#x63A5;&#x53E3;&#x7684;&#x6301;&#x6709;&#x8005;&#x5E76;&#x4E14;&#x672A;&#x4F7F;&#x7528;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x6253;&#x5305;&#x5DE5;&#x5177;&#x53EF;&#x80FD;&#x5DF2;&#x7ECF;&#x4ECE;&#x5E93;&#x6216;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x5206;&#x53D1;&#x4E2D;&#x5220;&#x9664;&#x4E86;&#x8BE5;&#x7C7B;&#x6587;&#x4EF6;&#x3002; &#x4F7F;&#x7528;&#x57FA;&#x4E8E;&#x5D4C;&#x5957;&#x7684;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#xFF0C;&#x5982;&#x679C;&#x4EFB;&#x4F55;&#x5D4C;&#x5957;&#x7C7B;&#x6216;&#x63A5;&#x53E3;&#x9700;&#x8981;&#x8BBF;&#x95EE;&#x5F7C;&#x6B64;&#x7684;&#x79C1;&#x6709;&#x6210;&#x5458;&#xFF0C;&#x5C06;&#x629B;&#x51FA; <code>NoClassDefFoundError</code> &#x6216; <code>ClassNotFoundException</code>&#x3002;</p>
+<h2 id="key-agreement-with-curve25519-and-curve448">Key Agreement with Curve25519 and Curve448</h2>
+<p>&#x5728; Java 10 &#x4E2D;&#x65B0;&#x589E;&#x4E86;&#x4E00;&#x4E2A;&#x4F7F;&#x7528; <em>Curve25519</em> &#x548C; <em>Curve448</em> &#x7684;&#x5BC6;&#x94A5;&#x534F;&#x5546;&#x65B9;&#x6848;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x5982; <a href="https://tools.ietf.org/html/rfc7748" target="_blank">RFC 7748 - Elliptic Curves for Security</a> &#x6240;&#x8FF0;&#x3002; &#x6B64;&#x5B9E;&#x73B0;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A; Java &#x52A0;&#x5BC6;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x670D;&#x52A1;&#xFF0C;&#x4F46;&#x5C1A;&#x672A;&#x7EB3;&#x5165; TLS 1.3 &#x5B9E;&#x73B0;&#x3002;</p>
+<h2 id="chacha20-and-poly1305-cryptographic-algorithms">ChaCha20 and Poly1305 Cryptographic Algorithms</h2>
+<p>Java 10 &#x5B9E;&#x73B0;&#x4E86; <a href="https://tools.ietf.org/html/rfc7539" target="_blank">RFC 7539 - ChaCha20 and Poly1305 for IETF Protocols</a> &#x4E2D;&#x6307;&#x5B9A;&#x7684; <em>ChaCha20</em> &#x548C; <em>ChaCha20-poly1305</em> &#x5BC6;&#x7801;&#x3002; <em>ChaCha20</em> &#x662F;&#x4E00;&#x79CD;&#x66F4;&#x65B0;&#x7684;&#x6D41;&#x5BC6;&#x7801;&#xFF0C;&#x53EF;&#x4EE5;&#x66FF;&#x4EE3;&#x65E7;&#x7684;&#x3001;&#x4E0D;&#x5B89;&#x5168;&#x7684; <em>RC4</em> &#x6D41;&#x5BC6;&#x7801;&#xFF0C;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-java">Cipher chaCha20 = Cipher.getInstance(<span class="hljs-string">&quot;ChaCha20&quot;</span>);
+Cipher chaCha20Poly1305 = Cipher.getInstance(<span class="hljs-string">&quot;ChaCha20-Poly1305&quot;</span>);
+</code></pre>
+<h2 id="transport-layer-security-tls-13">Transport Layer Security (TLS) 1.3</h2>
+<p>Java 11 &#x4E2D;&#x5305;&#x542B;&#x4E86; <a href="https://tools.ietf.org/html/rfc8446" target="_blank">RFC 8446 - The Transport Layer Security (TLS) Protocol Version 1.3</a> &#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x5BF9;&#x4E8E; TLS 1.3&#xFF0C;&#x65B0;&#x7684;&#x6807;&#x51C6;&#x7B97;&#x6CD5;&#x540D;&#x79F0;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>TLS protocol version name: <em>TLSv1.3</em></li>
+<li><code>SSLContext</code> algorithm name: <em>TLSv1.3</em></li>
+<li>TLS cipher suite names for TLS 1.3: <em>TLS_AES_128_GCM_SHA256</em>, <em>TLS_AES_256_GCM_SHA384</em></li>
+<li><em>keyType</em> for <code>X509KeyManager</code>: <em>RSASSA-PSS</em></li>
+<li><em>authType</em> for <code>X509TrustManager</code>: <em>RSASSA-PSS</em></li>
+</ul>
+<p>&#x26A0;&#xFE0F; &#x8BF7;&#x6CE8;&#x610F; TLS 1.3 &#x4E0E;&#x4E4B;&#x524D;&#x7684;&#x7248;&#x672C;&#x5E76;&#x4E0D;&#x76F4;&#x63A5;&#x517C;&#x5BB9;&#x3002; &#x867D;&#x7136; TLS 1.3 &#x53EF;&#x4EE5;&#x4EE5;&#x5411;&#x540E;&#x517C;&#x5BB9;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;&#xFF0C;&#x4F46;&#x5728;&#x5347;&#x7EA7;&#x5230; TLS 1.3 &#x65F6;&#x4ECD;&#x7136;&#x9700;&#x8981;&#x8003;&#x8651;&#x5230;&#x51E0;&#x4E2A;&#x517C;&#x5BB9;&#x6027;&#x98CE;&#x9669;&#xFF1A;</p>
+<ol>
+<li>TLS 1.3 uses a half-close policy, while TLS 1.2 and prior versions use a duplex-close policy. For applications that depend on the duplex-close policy, there may be compatibility issues when upgrading to TLS 1.3.</li>
+<li>The signature_algorithms_cert extension requires that pre-defined signature algorithms are used for certificate authentication. In practice, however, an application may use unsupported signature algorithms.</li>
+<li>The DSA signature algorithm is not supported in TLS 1.3. If a server is configured to only use DSA certificates, it cannot upgrade to TLS 1.3.</li>
+<li>The supported cipher suites for TLS 1.3 are not the same as TLS 1.2 and prior versions. If an application hard-codes cipher suites which are no longer supported, it may not be able to use TLS 1.3 without modifying the application code.</li>
+<li>The TLS 1.3 session resumption and key update behaviors are different from TLS 1.2 and prior versions. The compatibility impact should be minimal, but it could be a risk if an application depends on the handshake details of the TLS protocols.</li>
+</ol>
+<h2 id="removal-of-threaddestroy-and-threadstopthrowable">Removal of Thread.destroy() and Thread.stop(Throwable)</h2>
+<p><code>Thread.destroy()</code> &#x548C; <code>Thread.stop(Throwable)</code> &#x5728;&#x5F88;&#x65E9;&#x4E4B;&#x524D;&#x5C31;&#x88AB;&#x5E9F;&#x5F03;&#x4E86;&#xFF0C;&#x5728; Java 11 &#x4E2D;&#x7EC8;&#x4E8E;&#x88AB;&#x79FB;&#x9664;</p>
+<h2 id="removal-of-jmc-from-the-oracle-jdk">Removal of JMC from the Oracle JDK</h2>
+<p>&#x5728; Java 11 &#x4E2D;&#xFF0C;Java Mission Control (JMC) &#x88AB;&#x79FB;&#x9664;&#xFF0C;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x8F6F;&#x4EF6;&#x5305;&#x5355;&#x72EC;&#x53D1;&#x5E03;</p>
+<h2 id="removal-of-javafx-from-the-oracle-jdk">Removal of JavaFX from the Oracle JDK</h2>
+<p>JavaFX &#x4E5F;&#x88AB;&#x79FB;&#x9664;&#xFF0C;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x8F6F;&#x4EF6;&#x5305;&#x5355;&#x72EC;&#x53D1;&#x5E03;&#xFF0C;&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#xFF1A;<a href="https://openjfx.io/" target="_blank">openjfx.io</a></p>
+<h2 id="removal-of-java-ee-and-corba-modules">Removal of Java EE and CORBA Modules</h2>
+<p>&#x5728; Java 9 &#x4E2D;&#x88AB;&#x5E9F;&#x5F03;&#x7684; Java EE &#x548C; CORBA &#x5728; Java 11 &#x4E2D;&#x88AB;&#x79FB;&#x9664;</p>
+<h2 id="deprecation-of-nashorn-javascript-engine">Deprecation of Nashorn JavaScript Engine</h2>
+<p>&#x5728; Java 8 &#x4E2D;&#x6B64;&#x5165;&#x7684; <em>Nashorn JavaScript Engine</em> &#x5728; Java 11 &#x4E2D;&#x88AB;&#x5E9F;&#x5F03;&#x4E86;&#xFF0C;&#x9884;&#x8BA1;&#x5728;&#x5C06;&#x6765;&#x7684;&#x67D0;&#x4E2A;&#x7248;&#x672C;&#x4E2D;&#x79FB;&#x9664;</p>
+<h2 id="deprecation-of-pack200-tools-and-api">Deprecation of Pack200 Tools and API</h2>
+<p><em>Pack200</em> &#x5DE5;&#x5177;&#x53CA;&#x5176; API &#x88AB;&#x5E9F;&#x5F03;</p>
+<h2 id="readonly-system-properties">Readonly System Properties</h2>
+<p>&#x5728; Java 11 &#x4E2D;&#xFF0C;&#x8FD9;&#x4E9B;&#x7CFB;&#x7EDF;&#x5C5E;&#x6027;&#x4F1A;&#x5728;&#x865A;&#x62DF;&#x673A;&#x542F;&#x52A8;&#x65F6;&#x88AB;&#x7F13;&#x5B58;&#xFF1A;</p>
+<ul>
+<li><em>java.home</em></li>
+<li><em>user.home</em></li>
+<li><em>user.dir</em></li>
+<li><em>user.name</em></li>
+</ul>
+<p>&#x5728;&#x542F;&#x52A8;&#x540E;&#x901A;&#x8FC7; <code>System::setProperty</code> &#x4FEE;&#x6539;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#x5E76;&#x4E0D;&#x4F1A;&#x751F;&#x6548;</p>
+<h2 id="javalangrefreference-does-not-support-cloning"><code>java.lang.ref.Reference</code> Does Not Support Cloning</h2>
+<p>&#x5728; Java 11 &#x4E2D;&#xFF0C;&#x8C03;&#x7528; <code>java.lang.ref.References::clone</code> &#x65B9;&#x6CD5;&#x4F1A;&#x629B;&#x51FA; <code>CloneNotSupportedException</code></p>
+<hr>
+<blockquote id="fn_1">
+<sup>1</sup>. &#x5373;&#x811A;&#x672C;&#x6587;&#x4EF6;&#x7B2C;&#x4E00;&#x884C;&#x7684; #! &#x7B26;&#x53F7;<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#x21A9;</a>
+</blockquote>
+<blockquote id="fn_2">
+<sup>2</sup>. <a href="https://docs.oracle.com/javase/7/docs/technotes/guides/vm/performance-enhancements-7.html#compressedOop" target="_blank">https://docs.oracle.com/javase/7/docs/technotes/guides/vm/performance-enhancements-7.html#compressedOop</a><a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#x21A9;</a>
+</blockquote>
+<blockquote id="fn_3">
+<sup>3</sup>. <a href="https://docs.oracle.com/javase/7/docs/technotes/guides/vm/performance-enhancements-7.html#zeroBasedCompressedOop" target="_blank">https://docs.oracle.com/javase/7/docs/technotes/guides/vm/performance-enhancements-7.html#zeroBasedCompressedOop</a><a href="#reffn_3" title="Jump back to footnote [3] in the text."> &#x21A9;</a>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: 版本历史">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="./#local-variable-syntax-for-lambda-parameters" class="navigation navigation-next " aria-label="Next page: Local-Variable Syntax for Lambda Parameters">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Java SE 11","level":"1.1","depth":1,"next":{"title":"Local-Variable Syntax for Lambda Parameters","level":"1.1.1","depth":2,"anchor":"#local-variable-syntax-for-lambda-parameters","path":"content/java/version/java-se-11/README.md","ref":"content/java/version/java-se-11/README.md#local-variable-syntax-for-lambda-parameters","articles":[]},"previous":{"title":"版本历史","level":"1","depth":0,"path":"content/java/version/README.md","ref":"content/java/version/README.md","articles":[{"title":"Java SE 11","level":"1.1","depth":1,"path":"content/java/version/java-se-11/README.md","ref":"content/java/version/java-se-11/README.md","articles":[{"title":"Local-Variable Syntax for Lambda Parameters","level":"1.1.1","depth":2,"anchor":"#local-variable-syntax-for-lambda-parameters","path":"content/java/version/java-se-11/README.md","ref":"content/java/version/java-se-11/README.md#local-variable-syntax-for-lambda-parameters","articles":[]},{"title":"Launch Single-File Source-Code Programs","level":"1.1.2","depth":2,"anchor":"#launch-single-file-source-code-programs","path":"content/java/version/java-se-11/README.md","ref":"content/java/version/java-se-11/README.md#launch-single-file-source-code-programs","articles":[]},{"title":"Unicode 10","level":"1.1.3","depth":2,"anchor":"#unicode-10","path":"content/java/version/java-se-11/README.md","ref":"content/java/version/java-se-11/README.md#unicode-10","articles":[]},{"title":"HTTP Client (Standard)","level":"1.1.4","depth":2,"anchor":"#http-client-standard","path":"content/java/version/java-se-11/README.md","ref":"content/java/version/java-se-11/README.md#http-client-standard","articles":[]},{"title":"Lazy Allocation of Compiler Threads","level":"1.1.5","depth":2,"anchor":"#lazy-allocation-of-compiler-threads","path":"content/java/version/java-se-11/README.md","ref":"content/java/version/java-se-11/README.md#lazy-allocation-of-compiler-threads","articles":[]},{"title":"ZGC - A Scalable Low-Latency Garbage Collector","level":"1.1.6","depth":2,"anchor":"#zgc---a-scalable-low-latency-garbage-collector","path":"content/java/version/java-se-11/README.md","ref":"content/java/version/java-se-11/README.md#zgc---a-scalable-low-latency-garbage-collector","articles":[]},{"title":"Epsilon - A No-Op Garbage Collector","level":"1.1.7","depth":2,"anchor":"#epsilon---a-no-op-garbage-collector","path":"content/java/version/java-se-11/README.md","ref":"content/java/version/java-se-11/README.md#epsilon---a-no-op-garbage-collector","articles":[]},{"title":"Low-Overhead Heap Profiling","level":"1.1.8","depth":2,"anchor":"#low-overhead-heap-profiling","path":"content/java/version/java-se-11/README.md","ref":"content/java/version/java-se-11/README.md#low-overhead-heap-profiling","articles":[]},{"title":"Nest-Based Access Control","level":"1.1.9","depth":2,"anchor":"#nest-based-access-control","path":"content/java/version/java-se-11/README.md","ref":"content/java/version/java-se-11/README.md#nest-based-access-control","articles":[]},{"title":"Key Agreement with Curve25519 and Curve448","level":"1.1.10","depth":2,"anchor":"#key-agreement-with-curve25519-and-curve448","path":"content/java/version/java-se-11/README.md","ref":"content/java/version/java-se-11/README.md#key-agreement-with-curve25519-and-curve448","articles":[]},{"title":"ChaCha20 and Poly1305 Cryptographic Algorithms","level":"1.1.11","depth":2,"anchor":"#chacha20-and-poly1305-cryptographic-algorithms","path":"content/java/version/java-se-11/README.md","ref":"content/java/version/java-se-11/README.md#chacha20-and-poly1305-cryptographic-algorithms","articles":[]},{"title":"Transport Layer Security (TLS) 1.3","level":"1.1.12","depth":2,"anchor":"#transport-layer-security-tls-13","path":"content/java/version/java-se-11/README.md","ref":"content/java/version/java-se-11/README.md#transport-layer-security-tls-13","articles":[]},{"title":"Removal of Thread.destroy() and Thread.stop(Throwable)","level":"1.1.13","depth":2,"anchor":"#removal-of-threaddestroy-and-threadstopthrowable","path":"content/java/version/java-se-11/README.md","ref":"content/java/version/java-se-11/README.md#removal-of-threaddestroy-and-threadstopthrowable","articles":[]},{"title":"Removal of JMC from the Oracle JDK","level":"1.1.14","depth":2,"anchor":"#removal-of-jmc-from-the-oracle-jdk","path":"content/java/version/java-se-11/README.md","ref":"content/java/version/java-se-11/README.md#removal-of-jmc-from-the-oracle-jdk","articles":[]},{"title":"Removal of JavaFX from the Oracle JDK","level":"1.1.15","depth":2,"anchor":"#removal-of-javafx-from-the-oracle-jdk","path":"content/java/version/java-se-11/README.md","ref":"content/java/version/java-se-11/README.md#removal-of-javafx-from-the-oracle-jdk","articles":[]},{"title":"Removal of Java EE and CORBA Modules","level":"1.1.16","depth":2,"anchor":"#removal-of-java-ee-and-corba-modules","path":"content/java/version/java-se-11/README.md","ref":"content/java/version/java-se-11/README.md#removal-of-java-ee-and-corba-modules","articles":[]},{"title":"Deprecation of Nashorn JavaScript Engine","level":"1.1.17","depth":2,"anchor":"#deprecation-of-nashorn-javascript-engine","path":"content/java/version/java-se-11/README.md","ref":"content/java/version/java-se-11/README.md#deprecation-of-nashorn-javascript-engine","articles":[]},{"title":"Deprecation of Pack200 Tools and API","level":"1.1.18","depth":2,"anchor":"#deprecation-of-pack200-tools-and-api","path":"content/java/version/java-se-11/README.md","ref":"content/java/version/java-se-11/README.md#deprecation-of-pack200-tools-and-api","articles":[]},{"title":"Readonly System Properties","level":"1.1.19","depth":2,"anchor":"#readonly-system-properties","path":"content/java/version/java-se-11/README.md","ref":"content/java/version/java-se-11/README.md#readonly-system-properties","articles":[]},{"title":"java.lang.ref.Reference Does Not Support Cloning","level":"1.1.20","depth":2,"anchor":"#javalangrefreference-does-not-support-cloning","path":"content/java/version/java-se-11/README.md","ref":"content/java/version/java-se-11/README.md#javalangrefreference-does-not-support-cloning","articles":[]}]},{"title":"Java SE 10","level":"1.2","depth":1,"path":"content/java/version/java-se-10/README.md","ref":"content/java/version/java-se-10/README.md","articles":[]},{"title":"Java SE 9","level":"1.3","depth":1,"path":"content/java/version/java-se-9/README.md","ref":"content/java/version/java-se-9/README.md","articles":[]},{"title":"Java SE 8","level":"1.4","depth":1,"path":"content/java/version/java-se-8/README.md","ref":"content/java/version/java-se-8/README.md","articles":[]},{"title":"Java SE 7","level":"1.5","depth":1,"path":"content/java/version/java-se-7/README.md","ref":"content/java/version/java-se-7/README.md","articles":[]},{"title":"Java SE 6","level":"1.6","depth":1,"path":"content/java/version/java-se-6/README.md","ref":"content/java/version/java-se-6/README.md","articles":[]},{"title":"J2SE 5.0","level":"1.7","depth":1,"path":"content/java/version/j2se-5.0/README.md","ref":"content/java/version/j2se-5.0/README.md","articles":[]},{"title":"J2SE 1.4","level":"1.8","depth":1,"path":"content/java/version/j2se-1.4/README.md","ref":"content/java/version/j2se-1.4/README.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["mathjax","splitter","codeblock-filename","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"sepia","family":"serif","size":1},"highlight":{},"codeblock-filename":{},"theme-comscore":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":[]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"The Architect","links":{"sharing":{"google":false,"facebook":false,"twitter":false,"all":false}},"gitbook":">=3.1.0","description":"The Cookbook of Architect"},"file":{"path":"content/java/version/java-se-11/README.md","mtime":"2019-03-14T14:37:35.732Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-14T15:56:03.037Z"},"basePath":"../../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
