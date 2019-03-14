@@ -15,8 +15,8 @@
     ],
     "pluginsConfig": {
         "fontsettings": {
-            "theme": "sepia",
-            "family": "serif",
+            "theme": "white",
+            "family": "sans",
             "size": 1
         },
         "theme-default": {
