@@ -1,7 +1,7 @@
 {
     "gitbook": ">=3.1.0",
-    "title": "The Architect",
-    "description": "The Cookbook of Architect",
+    "title": "Architect",
+    "description": "A Cookbook of Architect",
     "output": "docs",
     "generator": "site",
     "structure": {

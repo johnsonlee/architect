@@ -1,2 +1,2 @@
-# The Architect
+# Architect
 

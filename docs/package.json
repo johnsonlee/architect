@@ -1,7 +1,7 @@
 {
   "name": "architect",
   "version": "0.0.1",
-  "description": "The Architect",
+  "description": "A Cookbook of Architect",
   "main": "index.js",
   "directories": {
     "doc": "docs"
