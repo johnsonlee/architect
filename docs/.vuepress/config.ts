@@ -5,19 +5,19 @@ import { defineUserConfig } from 'vuepress';
 import { navbar, sidebar } from './configuration';
 
 export default defineUserConfig<DefaultThemeOptions>({
-  base: '/',
+  base: '/architect/',
   lang: 'en-US',
   dest: './dist',
-  title: 'Title',
-  description: 'Description',
+  title: 'The Architect',
+  description: 'A guide on how to become an architect',
   locales: {
     '/en/': {
       lang: 'en-US',
     },
     '/zh/': {
       lang: 'zh-CN',
-      title: 'Title',
-      description: 'Description',
+      title: '架构师',
+      description: '架构师成长指南',
     },
   },
   head: [
@@ -33,8 +33,8 @@ export default defineUserConfig<DefaultThemeOptions>({
   ],
   bundler: process.env.DOCS_BUNDLER ?? '@vuepress/vite',
   themeConfig: {
-    repo: 'johnsonlee/vuepress-next-template',
-    docsRepo: 'johnsonlee/vuepress-next-template',
+    repo: 'johnsonlee/architect',
+    docsRepo: 'johnsonlee/architect',
     docsBranch: 'master',
     docsDir: 'docs',
     editLinkPattern: ':repo/edit/:branch/:path',

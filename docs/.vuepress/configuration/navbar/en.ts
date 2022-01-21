@@ -1,4 +1,4 @@
 export default {
     ['navbar.guide'                                     ]: 'Guide',
-    ['navbar.donate'                                    ]: 'By Me A Coffee',
+    ['navbar.donate'                                    ]: 'Buy Me A Coffee',
 }

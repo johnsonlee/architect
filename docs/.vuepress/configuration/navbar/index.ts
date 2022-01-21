@@ -13,10 +13,6 @@ const getNavbar = (lang: string): NavbarConfig => {
 
   return [
     {
-      text: $('navbar.guide'),
-      link: `/${lang}/guide/`,
-    },
-    {
       text: $('navbar.donate'),
       link: `/${lang}/donate/`
     },

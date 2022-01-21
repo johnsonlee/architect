@@ -1,7 +1,7 @@
 {
-  "name": "vuepress-next-template",
+  "name": "the-architect",
   "version": "1.0.0",
-  "description": "Documentation",
+  "description": "A guide on how to become an architect",
   "main": "index.js",
   "scripts": {
     "start": "npx vuepress dev docs",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/johnsonlee/vuepress-next-template.git"
+    "url": "https://github.com/johnsonlee/architect.git"
   },
   "author": "johnsonlee",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/johnsonlee/vuepress-next-template/issues"
+    "url": "https://github.com/johnsonlee/architect/issues"
   },
-  "homepage": "https://github.com/johnsonlee/vuepress-next-template",
+  "homepage": "https://github.com/johnsonlee/architect",
   "dependencies": {},
   "devDependencies": {
     "@vuepress/plugin-active-header-links": "^2.0.0-beta.32",
