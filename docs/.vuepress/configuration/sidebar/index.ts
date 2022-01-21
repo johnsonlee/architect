@@ -13,13 +13,10 @@ const getSidebar = (lang: string): SidebarConfig => {
   const $ = (key: string) => strings[key] ?? key
 
   return {
-    [`/${lang}/`]: [],
-    [`/${lang}/guide/`]: [
+    [`/${lang}/`]: [
       {
-        text: $('sidebar.guide'),
-        children: [
-          `/${lang}/guide/`,
-        ],
+        text: '前言',
+        link: `/${lang}/preface/`,
       },
     ],
   } as SidebarConfig

@@ -6,6 +6,6 @@ heroText: The Architect
 tagline: A guide on how to become an architect.
 actions:
   - text: Start Reading →
-    link: /
+    link: /zh/preface/
     type: secondary
 ---
